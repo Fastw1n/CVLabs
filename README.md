@@ -3,9 +3,12 @@
 Цель - получить дедлайн (пожалуйста), я уже в процессе доработки.
 Вот вывод с cmd с обучение ResNet50, на момент val_acc ≈ 0.91 — я подумал, что это почти наверняка даст F1_macro > 0.8 на test, но видимо классов все равно было многовато.
 
-Epoch 01/8 | loss=0.7345 | val_acc=0.8481 | 4233.3s saved: outputs\resnet50_ft\best.pt Epoch 02/8 | loss=0.5468 | val_acc=0.8649 | 4588.6s saved: outputs\resnet50_ft\best.pt Epoch 03/8 | loss=0.4796 | val_acc=0.8556 | 5010.8s Epoch 04/8 | loss=0.4122 | val_acc=0.8857 | 4309.8s saved: outputs\resnet50_ft\best.pt Epoch 05/8 | loss=0.3444 | val_acc=0.8987 | 4026.9s saved: outputs\resnet50_ft\best.pt Epoch 06/8 | loss=0.2770 | val_acc=0.9007 | 3957.8s saved: outputs\resnet50_ft\best.pt Epoch 07/8 | loss=0.2186 | val_acc=0.9064 | 3965.1s saved: outputs\resnet50_ft\best.pt Epoch 08/8 | loss=0.1812 | val_acc=0.9099 | 4005.5s saved: outputs\resnet50_ft\best.pt Done. Best val_acc: 0.9098555100280353 C:\Users\user\Desktop\CV_ITMO> 
+```
+Epoch 01/8 | loss=0.7345 | val_acc=0.8481 | 4233.3s saved: outputs\resnet50_ft\best.pt Epoch 02/8 | loss=0.5468 | val_acc=0.8649 | 4588.6s saved: outputs\resnet50_ft\best.pt Epoch 03/8 | loss=0.4796 | val_acc=0.8556 | 5010.8s Epoch 04/8 | loss=0.4122 | val_acc=0.8857 | 4309.8s saved: outputs\resnet50_ft\best.pt Epoch 05/8 | loss=0.3444 | val_acc=0.8987 | 4026.9s saved: outputs\resnet50_ft\best.pt Epoch 06/8 | loss=0.2770 | val_acc=0.9007 | 3957.8s saved: outputs\resnet50_ft\best.pt Epoch 07/8 | loss=0.2186 | val_acc=0.9064 | 3965.1s saved: outputs\resnet50_ft\best.pt Epoch 08/8 | loss=0.1812 | val_acc=0.9099 | 4005.5s saved: outputs\resnet50_ft\best.pt Done. Best val_acc: 0.9098555100280353 C:\Users\user\Desktop\CV_ITMO>
+```
 
 А вот вывод для макро:
+```
 C:\Users\user\Desktop\CV_ITMO>C:\Users\user\AppData\Local\Programs\Python\Python313\python.exe eval.py --ckpt outputs\resnet50_ft\best.pt --data_root Confirmed_fronts
 Device: cpu
 [make_splits] Удалил 2 примеров из слишком редких классов (<5).
@@ -42,5 +45,6 @@ weighted avg       0.90      0.91      0.90      9274
 Saved: f1.json, confusion_matrix.json, classification_report.txt -> outputs\resnet50_ft
 
 C:\Users\user\Desktop\CV_ITMO>
+```
 
 То есть жеский дисбаланс классов, нужно чуть подчистить.
